@@ -59,6 +59,8 @@ if [ ! -f /etc/npc-init.flag ]; then
     VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '{print $1}')
 	uci set npc.@npc[0].server_addr="192.168.1.1"
     uci set npc.@npc[0].vkey="$VKEY"
+	uci set npc.@npc[0].compress="1"
+	uci set npc.@npc[0].crypt="1"
     uci commit npc
 
     touch /etc/npc-init.flag
