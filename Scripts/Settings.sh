@@ -41,6 +41,13 @@ git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git package/kwrt-pa
 mv package/kwrt-packages/luci-app-pushbot package/luci-app-pushbot
 rm -rf package/kwrt-packages
 
+# 修复 libxcrypt 编译 format-nonliteral 错误
+LIBXCRYPT_MAKEFILE="feeds/packages/libs/libxcrypt/Makefile"
+if [ -f "$LIBXCRYPT_MAKEFILE" ]; then
+    # 如果没有加过，则追加
+    grep -q 'Wno-format-nonliteral' "$LIBXCRYPT_MAKEFILE" || \
+    sed -i '/^include.*rules.mk/a TARGET_CFLAGS += -Wno-format-nonliteral' "$LIBXCRYPT_MAKEFILE"
+fi
 
 #调整mtk系列配置
 sed -i '/TARGET.*mediatek/d' ./.config
