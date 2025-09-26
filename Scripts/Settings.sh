@@ -51,22 +51,21 @@ fi
 
 
 # 在 默认生成npc服务器以及密钥（覆盖 npc 配置）
-WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "eth0")
-WAN_MAC=$(cat /sys/class/net/$WAN_IF/address)
-VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '{print $1}')
-echo "配置NPC的服务器ip和密钥"
-echo "$VKEY"
+# 在 Settings.sh 末尾添加以下内容自动写入 /etc/rc.local
+cat << 'EOF' >> package/base-files/files/etc/rc.local
+if [ ! -f /etc/npc-init.flag ]; then
+    WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "eth0")
+    WAN_MAC=$(cat /sys/class/net/$WAN_IF/address)
+    VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '{print $1}')
+	uci set npc.@npc[0].server_addr="192.168.1.1"
+    uci set npc.@npc[0].vkey="$VKEY"
+    uci commit npc
 
-cat > package/base-files/files/etc/config/npc <<EOF
-config npc
-	option enable '1'
-	option server_addr '192.168.1.1'
-	option vkey '$VKEY'
-	option server_port '8024'
-	option protocol 'tcp'
-	option compress '1'
-	option crypt '1'
+    touch /etc/npc-init.flag
+    reboot
+fi
 EOF
+
 
 #调整mtk系列配置
 sed -i '/TARGET.*mediatek/d' ./.config
