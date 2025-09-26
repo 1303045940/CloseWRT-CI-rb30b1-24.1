@@ -61,6 +61,7 @@ if [ ! -f /etc/npc-init.flag ]; then
     uci set npc.@npc[0].vkey="$VKEY"
 	uci set npc.@npc[0].compress="1"
 	uci set npc.@npc[0].crypt="1"
+	uci set npc.@npc[0].enable="1"
     uci commit npc
 
     touch /etc/npc-init.flag
