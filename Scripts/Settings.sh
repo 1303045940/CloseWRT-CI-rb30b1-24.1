@@ -49,6 +49,23 @@ if [ -f "$LIBXCRYPT_MAKEFILE" ]; then
     sed -i '/^include.*rules.mk/a TARGET_CFLAGS += -Wno-format-nonliteral' "$LIBXCRYPT_MAKEFILE"
 fi
 
+
+# 在 默认生成npc服务器以及密钥（覆盖 npc 配置）
+WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "eth0")
+WAN_MAC=$(cat /sys/class/net/$WAN_IF/address)
+VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '{print $1}')
+
+cat > package/base-files/files/etc/config/npc <<EOF
+config npc
+	option enable '1'
+	option server_addr '192.168.1.1'
+	option vkey '$VKEY'
+	option server_port '8024'
+	option protocol 'tcp'
+	option compress '1'
+	option crypt '1'
+EOF
+
 #调整mtk系列配置
 sed -i '/TARGET.*mediatek/d' ./.config
 sed -i '/TARGET_MULTI_PROFILE/d' ./.config
