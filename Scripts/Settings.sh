@@ -54,6 +54,8 @@ fi
 WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "eth0")
 WAN_MAC=$(cat /sys/class/net/$WAN_IF/address)
 VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '{print $1}')
+echo "配置NPC的服务器ip和密钥"
+echo "$VKEY"
 
 cat > package/base-files/files/etc/config/npc <<EOF
 config npc
