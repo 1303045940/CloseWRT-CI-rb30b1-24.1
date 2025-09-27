@@ -41,6 +41,16 @@ git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git package/kwrt-pa
 mv package/kwrt-packages/luci-app-pushbot package/luci-app-pushbot
 rm -rf package/kwrt-packages
 
+# Scripts/Settings.sh
+FEEDS_CONF="feeds.conf.default"
+CUSTOM_FEED="src-git custom https://github.com/kiddin9/kwrt-packages"
+if ! grep -qF "$CUSTOM_FEED" "$FEEDS_CONF"; then
+    echo "$CUSTOM_FEED" >> "$FEEDS_CONF"
+    echo "已添加自定义feed：$CUSTOM_FEED"
+else
+    echo "自定义feed已存在，无需重复添加"
+fi
+
 # 添加 shadowsocksr-libev-ssr-check 包
 git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 cp -r package/helloworld/shadowsocksr-libev-ssr-check package/
