@@ -41,6 +41,11 @@ git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git package/kwrt-pa
 mv package/kwrt-packages/luci-app-pushbot package/luci-app-pushbot
 rm -rf package/kwrt-packages
 
+# 添加 shadowsocksr-libev-ssr-check 包
+git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+cp -r package/helloworld/shadowsocksr-libev-ssr-check package/
+rm -rf package/helloworld
+
 # 修复 libxcrypt 编译 format-nonliteral 错误
 LIBXCRYPT_MAKEFILE="feeds/packages/libs/libxcrypt/Makefile"
 if [ -f "$LIBXCRYPT_MAKEFILE" ]; then
