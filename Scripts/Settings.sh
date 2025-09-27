@@ -87,6 +87,11 @@ if ! grep -q 'npc-init.flag' "$RCLOCAL"; then
     chmod +x "$RCLOCAL"
 fi
 
+# 跳过目标平台二进制的本地检查
+export NO_SSHD_CHECK=1
+
+# 临时兼容 openssl 3.x 的废弃 API 警告
+export CFLAGS="$CFLAGS -Wno-deprecated-declarations"
 
 #调整mtk系列配置
 sed -i '/TARGET.*mediatek/d' ./.config
