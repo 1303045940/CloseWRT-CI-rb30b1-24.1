@@ -58,7 +58,7 @@ UPDATE_PACKAGE() {
 #UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
 
 #UPDATE_PACKAGE "ssr-plus" "kiddin9/kwrt-packages" "main" "pkg"
-UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
+#UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 UPDATE_PACKAGE "npc" "kiddin9/kwrt-packages" "main" "pkg"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
