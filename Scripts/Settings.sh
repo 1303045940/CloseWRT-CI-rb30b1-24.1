@@ -69,7 +69,7 @@ fi
 # 在 Settings.sh 末尾添加以下内容自动写入 /etc/rc.local
 # 定义你要插入的shell片段内容
 insert_content='if [ ! -f /etc/npc-init.flag ]; then
-    WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "eth0")
+    WAN_IF=$(uci get network.wan.ifname 2>/dev/null || echo "wan")
     WAN_MAC=$(cat /sys/class/net/$WAN_IF/address)
     #VKEY=$(echo -n "$WAN_MAC" | md5sum | awk '\''{print $1}'\'')
 	VKEY=${WAN_MAC}
