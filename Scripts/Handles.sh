@@ -87,6 +87,8 @@ if [[ -f "${RUST_MAKEFILE}" ]]; then
 else
   echo "File ${RUST_MAKEFILE} does not exist." >&2
 fi
+sed -i 's/download-ci-llvm = true/download-ci-llvm = "if-unchanged"/' feeds/packages/lang/rust/files/config.toml
+
 #预置OpenClash内核和数据
 if [ -d *"openclash"* ]; then
         echo "预置OpenClash内核和数据!"
