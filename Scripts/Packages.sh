@@ -83,6 +83,8 @@ UPDATE_PACKAGE "luci-app-quickstart" "shidahuilang/openwrt-package" "Immortalwrt
 #UPDATE_PACKAGE "luci-app-quickstart" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
 #UPDATE_PACKAGE "quickstart" "master-yun-yun/package-istore" "Immortalwrt" "pkg"
 #UPDATE_PACKAGE "luci-app-quickstart" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
+
+UPDATE_PACKAGE "quickstart" "kiddin9/kwrt-packages" "Immortalwrt" "pkg"
 UPDATE_PACKAGE "luci-app-quickstart" "kiddin9/kwrt-packages" "Immortalwrt" "pkg"
 UPDATE_PACKAGE "luci-app-adguardhome" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
 
