@@ -72,6 +72,7 @@ UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main" "pkg"
 ##UPDATE_PACKAGE "quickstart" "kenzok8/small-package" "main" "pkg"
 ##UPDATE_PACKAGE "luci-app-quickstart" "kenzok8/small-package" "main" "pkg"
 ##UPDATE_PACKAGE "luci-app-istorex" "kenzok8/small-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-quickstart" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
 
 # istore增强
 #UPDATE_PACKAGE "istoreenhance" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
