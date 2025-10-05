@@ -91,7 +91,7 @@ UPDATE_PACKAGE "quickstart" "master-yun-yun/package-istore" "Immortalwrt" "pkg"
 UPDATE_PACKAGE "luci-app-quickstart" "master-yun-yun/package-istore" "Immortalwrt" "pkg"
 
 
-UPDATE_PACKAGE "luci-app-adguardhome" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
+#UPDATE_PACKAGE "luci-app-adguardhome" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
 
 # istore商店
 UPDATE_PACKAGE "luci-app-store" "shidahuilang/openwrt-package" "Immortalwrt" "pkg"
