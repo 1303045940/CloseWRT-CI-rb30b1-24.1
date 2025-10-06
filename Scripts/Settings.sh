@@ -115,16 +115,7 @@ fi
 RCLOCAL="package/base-files/files/etc/rc.local"
 
 # 只有没有插入过才插入（通过唯一标识判断）
-if ! grep -q 'npc-init.flag' "$RCLOCAL"; then
-    # 用awk插入到exit 0前
-    awk -v insert="$insert_content" '
-    /^exit 0/ {
-        print insert
-    }
-    { print }
-    ' "$RCLOCAL" > "$RCLOCAL.tmp" && mv "$RCLOCAL.tmp" "$RCLOCAL"
-    chmod +x "$RCLOCAL"
-fi
+
 
 # 跳过目标平台二进制的本地检查
 export NO_SSHD_CHECK=1
