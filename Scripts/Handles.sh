@@ -46,6 +46,13 @@ fi
 #	cd $PKG_PATH && echo "tailscale has been fixed!"
 #fi
 
+# 更新 Golang 为最新版
+cd "$pkgPath"
+rm -rf "$WRT_MainPath/feeds/packages/lang/golang"
+git clone https://github.com/sbwml/packages_lang_golang -b 25.x "$WRT_MainPath/feeds/packages/lang/golang"
+echo 'Updated: golang'
+echo ''
+
 #修复Rust编译失败
 RUST_FILE=$(find ../feeds/packages/ -maxdepth 3 -type f -wholename "*/rust/Makefile")
 if [ -f "$RUST_FILE" ]; then
