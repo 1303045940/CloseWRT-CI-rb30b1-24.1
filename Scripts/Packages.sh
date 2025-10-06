@@ -60,7 +60,8 @@ UPDATE_PACKAGE() {
 #UPDATE_PACKAGE "ssr-plus" "kiddin9/kwrt-packages" "main" "pkg"
 #UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 #UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
-UPDATE_PACKAGE "npc" "kiddin9/kwrt-packages" "main" "pkg"
+UPDATE_PACKAGE "luci-app-npc" "kiddin9/kwrt-packages" "main" "pkg"
+
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main" "pkg"
 
