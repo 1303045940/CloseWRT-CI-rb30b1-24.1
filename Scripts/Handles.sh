@@ -56,6 +56,15 @@ if [ -f "$RUST_FILE" ]; then
 	cd $PKG_PATH && echo "rust has been fixed!"
 fi
 
+
+# Set Rust build arg llvm.download-ci-llvm to false.#修复Rust编译失败Add commentMore actions
+RUST_MAKEFILE="feeds/packages/lang/rust/Makefile"
+if [[ -f "${RUST_MAKEFILE}" ]]; then
+  sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' "${RUST_MAKEFILE}"
+else
+  echo "File ${RUST_MAKEFILE} does not exist." >&2
+fi
+
 #移除sb内核回溯移植补丁
 SB_PATCH="../feeds/packages/net/sing-box/patches"
 if [ -d "$SB_PATCH" ]; then
