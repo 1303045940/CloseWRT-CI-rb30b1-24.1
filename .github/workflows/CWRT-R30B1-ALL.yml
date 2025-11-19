@@ -59,13 +59,13 @@ jobs:
       #默认主题
       WRT_THEME: design
       #默认主机名
-      WRT_NAME: Openwrt
+      WRT_NAME: GJ-Link
       #默认WIFI名称
-      WRT_SSID: Openwrt
+      WRT_SSID: GJ-Link
       #默认WIFI密码
-      WRT_WORD: password
+      WRT_WORD: 77777777
       #默认地址
-      WRT_IP: 192.168.6.1
+      WRT_IP: 10.7.7.1
       #默认密码，仅作提示，修改无用
       WRT_PW: password
       #源码链接
