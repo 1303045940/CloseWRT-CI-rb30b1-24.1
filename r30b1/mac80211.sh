@@ -171,11 +171,11 @@ detect_mac80211() {
 		# 根据 devidx 判断设置 SSID
 		# ====================================
 		if [ "$devidx" = "0" ]; then
-			ssid="Openwrt-2.4G"
+			ssid="GJ-Link-2.4G"
 		elif [ "$devidx" = "1" ]; then
-			ssid="Openwrt-5G"
+			ssid="GJ-Link-5G"
 		else
-			ssid="Openwrt"
+			ssid="GJ-Link"
 		fi
 
 		uci -q batch <<-EOF
