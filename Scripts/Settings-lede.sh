@@ -79,7 +79,7 @@ VERSION=$(grep "PRETTY_NAME=" package/base-files/files/usr/lib/os-release | cut 
 # 使用 sed 替换（使用 | 作为分隔符避免斜杠冲突）
 new_version="24.10.3   by TIKTOK直播专用(www.gjlink.xyz) 编译日期：${date_version}"
 #系统名称改成openwrt
-sed -i 's/LEDE/openwrt/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/LEDE/TIKTOK直播专用/g' package/lean/default-settings/files/zzz-default-settings
 sed -i "s|${orig_version}|${new_version}|g" package/lean/default-settings/files/zzz-default-settings
 
 #修改默认WIFI名
