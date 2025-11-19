@@ -22,8 +22,8 @@ CFG_FILE="/package/base-files/files/bin/config_generate"
 
 
 #更改默认地址为192.168.6.1
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/10.7.7.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.7.7.1/g' package/base-files/luci2/bin/config_generate
 
 #修改默认主机名
 sed -i "s/hostname='.*'/hostname='OpenWrt'/g" ./package/base-files/files/bin/config_generate
@@ -77,7 +77,7 @@ VERSION=$(grep "PRETTY_NAME=" package/base-files/files/usr/lib/os-release | cut 
 #new_version="${VERSION_NAME}  ${VERSION}   by 微信:Mr___zjz 编译日期：${date_version}"
 #new_version="${VERSION}    by 微信:Mr___zjz 编译日期：${date_version}"
 # 使用 sed 替换（使用 | 作为分隔符避免斜杠冲突）
-new_version="24.10.3   by 微信:Mr___zjz 编译日期：${date_version}"
+new_version="24.10.3   by TIKTOK直播专用(www.gjlink.xyz) 编译日期：${date_version}"
 #系统名称改成openwrt
 sed -i 's/LEDE/openwrt/g' package/lean/default-settings/files/zzz-default-settings
 sed -i "s|${orig_version}|${new_version}|g" package/lean/default-settings/files/zzz-default-settings
