@@ -59,7 +59,7 @@ jobs:
       #默认主题
       WRT_THEME: design
       #默认主机名
-      WRT_NAME: GJ-Link
+      WRT_NAME: TIKTOK直播专用
       #默认WIFI名称
       WRT_SSID: GJ-Link
       #默认WIFI密码
