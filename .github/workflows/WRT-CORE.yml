@@ -278,6 +278,8 @@ jobs:
     
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
+        env: 
+          STRIP: "true" 
         run: |
           cd ./wrt/
     
