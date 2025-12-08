@@ -52,7 +52,7 @@ LEDE_FILE=$(find ./package/lean/autocore/ -type f -name "index.htm")
 sed -i 's/os.date()/os.date("%Y-%m-%d %H:%M 星期%w")/g' $LEDE_FILE
 
 #修改luc显示版本改成系统版本
-sed -i "735s/<%=pcdata(ver\.luciname)%> (<%=pcdata(ver\.luciversion)%>)/openwrt-24.10.3/" package/lean/autocore/files/arm/index.htm
+sed -i "735s/<%=pcdata(ver\.luciname)%> (<%=pcdata(ver\.luciversion)%>)/openwrt-24.10.4/" package/lean/autocore/files/arm/index.htm
 
 # 注释原行（精确匹配原URL和版本）
 #sed -i '/src-git luci https:\/\/github.com\/coolsnowwolf\/luci\.git;openwrt-23.05/s/^/#/' "feeds.conf.default"
