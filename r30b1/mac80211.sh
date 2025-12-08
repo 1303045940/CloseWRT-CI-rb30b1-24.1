@@ -171,9 +171,9 @@ detect_mac80211() {
 		# 根据 devidx 判断设置 SSID
 		# ====================================
 		if [ "$devidx" = "0" ]; then
-			ssid="GJ-Link-2.4G"
+			ssid="Openwrt-2.4G"
 		elif [ "$devidx" = "1" ]; then
-			ssid="GJ-Link-5G"
+			ssid="Openwrt-5G"
 		else
 			ssid="GJ-Link"
 		fi
@@ -195,7 +195,7 @@ detect_mac80211() {
 			set wireless.default_radio${devidx}.ssid=${ssid}
 			#set wireless.default_radio${devidx}.encryption=none
 			set wireless.default_radio${devidx}.encryption=psk2          # ✅ 添加
-			set wireless.default_radio${devidx}.key=77777777             # ✅ 添加
+			set wireless.default_radio${devidx}.key=password             # ✅ 添加
 EOF
 		uci -q commit wireless
 
